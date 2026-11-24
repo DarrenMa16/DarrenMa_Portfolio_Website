@@ -1,0 +1,269 @@
+/* -- Normal -- */
+@font-face {
+    font-family: "GhibliFont";
+    src: url("/fonts/ghibli.woff2") format("woff2"), 
+         url("/fonts/ghibli.woff") format("woff");
+}
+
+/* -- Bold -- */
+@font-face {
+    font-family: "GhibliFont";
+    src: url("/fonts/ghibli-bold.woff2") format("woff2"),
+         url("/fonts/ghibli-bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Mobile Settings */
+body {
+    margin: 0;
+    font-family: "GhibliFont", Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    background-color: #f7f9fb;
+    color: #222;
+
+    display: grid;
+    grid-template-columns: 1fr; /* Change to only one column */
+    grid-template-areas:
+        "header"
+        "nav"
+        "subnav"
+        "main"
+        "footer";
+}
+
+/* Typography */
+p {
+    margin: 0 0 12px;
+    font-size: 1.05rem;
+    font-weight: 400;
+}
+
+h1 {
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: #2E86C1;
+    margin: 15px 0 6px; /* tighter */
+    font-weight: 700;
+}
+
+h3 {
+    font-size: 1.25rem;
+    color: #1f5f8a;
+    margin: 8px 0 2px;
+    font-weight: 700;
+}
+
+/* Header */
+header {
+    grid-area: header;
+    background-color: #ffffff;
+    border-bottom: 2px solid #ddd;
+    padding: 10px 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Navigation */
+#nav {
+    grid-area: nav;
+    background-color: #eaf2f8;
+    padding: 15px;
+}
+
+#nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#nav ul li {
+    transition: 0.2s ease;
+}
+
+#nav ul li:hover {
+    transform: translateX(5px);
+}
+
+#nav ul li a {
+    display: block;
+    padding: 5px;
+}
+
+#nav a {
+    text-decoration: none;
+    color: #095d94;
+    font-weight: bold;
+}
+
+/* Subnav */
+#subnav {
+    grid-area: subnav;
+    background-color: #f0f4f7;
+    padding: 15px;
+    font-size: 0.9em;
+}
+
+/* Main */
+main {
+    grid-area: main;
+    padding: 20px;
+}
+
+/* Sections */
+section {
+    margin-bottom: 0.5em;
+}
+
+/* Images (FIXED) */
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 10px 0 15px;
+}
+
+/* Content blocks */
+.content-block {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin: 10px 0;
+}
+
+/* Reverse */
+.content-block.reverse {
+    direction: rtl;
+}
+
+.content-block.reverse .text,
+.content-block.reverse .image {
+    direction: ltr;
+}
+
+/* Text */
+.text {
+    font-size: 1.05rem;
+}
+
+/* Full width text */
+.full-text {
+    width: 100%;
+    margin: 15px 0;
+}
+
+/* Footer */
+footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-top: 2px solid #ddd;
+}
+
+/* Tablet Settings */
+@media (min-width: 768px) {
+    body {
+        grid-template-columns: 200px 1fr;
+        grid-template-areas:
+            "header header"
+            "nav main"
+            "subnav main"
+            "footer footer";
+    }
+
+    main {
+        padding: 30px;
+    }
+
+    .content-block {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    #nav {
+        position: sticky;
+        top: 0px;
+        height: fit-content;
+    }
+
+    #subnav {
+        position: sticky;
+        top: 220px;
+        height: fit-content;
+    }
+}
+
+/* Desktop Settings */
+@media (min-width: 1024px) {
+    body {
+        grid-template-columns: 220px 1fr 180px;
+        grid-template-areas:
+            "header header header"
+            "nav main subnav"
+            "footer footer footer";
+    }
+}
+
+/* Dark Mode */
+.dark-mode {
+    background-color: #121212;
+    color: #eee;
+}
+
+.dark-mode header,
+.dark-mode footer {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+.dark-mode #nav {
+    background-color: #1a2633;
+}
+
+.dark-mode #subnav {
+    background-color: #1a1f24;
+}
+
+.dark-mode a {
+    color: #6cb6ff;
+}
+
+/* Fix headings in dark mode */
+.dark-mode h2 {
+    color: #6cb6ff;
+}
+
+.dark-mode h3 {
+    color: #9ecfff;
+}
+
+/* Day box styling in dark mode */
+.dark-mode #dayBox {
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+/* Align this box to the right of the screen */
+#dayBox {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #eaf2f8;
+    border-radius: 10px;
+    font-size: 1.2rem;
+
+    width: fit-content;
+    margin-left: auto;   /* pushes it to the right */
+}

@@ -1,0 +1,202 @@
+/* -- Normal -- */
+@font-face {
+    font-family: "GhibliFont";
+    src: url("/fonts/ghibli.woff2") format("woff2"), 
+         url("/fonts/ghibli.woff") format("woff");
+}
+
+/* -- Bold -- */
+@font-face {
+    font-family: "GhibliFont";
+    src: url("/fonts/ghibli-bold.woff2") format("woff2"),
+         url("/fonts/ghibli-bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+}
+
+body {
+    margin: 0;
+    font-family: "GhibliFont", Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f9fb;
+    color: #222;
+}
+
+/* -- Grid Layout -- */
+body {
+	margin: 0;
+    font-family: "GhibliFont", Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+
+    display: grid;
+    grid-template-columns: 250px 1fr 200px;
+    grid-template-areas:
+        "header header header"
+        "nav main subnav"
+        "footer footer footer";
+}
+
+p {
+    margin-bottom: 12px;
+    font-size: 1.05rem;
+	font-weight: 400;
+}
+
+h1 {
+	font-weight: 700;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #2E86C1;
+	margin: 20px 0 10px;
+	font-weight: 700;
+}
+
+h3 {
+    font-size: 1.3rem;
+    color: #1f5f8a;
+    margin: 10px 0 4px;
+    font-weight: 700;
+}
+
+/* -- Header ELements -- */
+header {
+    grid-area: header;
+    background-color: #ffffff;
+    border-bottom: 2px solid #ddd;
+    padding: 10px 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* -- Main Navigation -- */
+#nav {
+    grid-area: nav;
+    background-color: #eaf2f8;
+    padding: 20px;
+}
+
+#nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+#nav li {
+    margin-bottom: 10px;
+}
+
+#nav a {
+    text-decoration: none;
+    color: #095d94;
+    font-weight: bold;
+}
+
+#nav a:hover {
+    text-decoration: underline;
+}
+
+/* -- Sub Navigation -- */
+#subnav {
+    grid-area: subnav;
+    background-color: #f0f4f7;
+    padding: 20px;
+    font-size: 0.9em;
+}
+
+/* -- Main Body -- */
+main {
+    grid-area: main;
+    padding: 30px;
+}
+
+/* multi-column text */
+section {
+    margin-bottom: 0.5em;
+}
+
+section h2 {
+    margin-bottom: 5px;
+}
+
+/* -- Images -- */
+img {
+    width: 100%;
+    height: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+
+    /* Make images break column nicely */
+    break-inside: avoid;
+}
+
+/* -- Flexbox --*/
+header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Navigation list using flexbox */
+#nav ul {
+    display: flex;
+    flex-direction: column;
+}
+
+/* -- Footer -- */
+footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border-top: 2px solid #ddd;
+}
+
+/* GRID for content blocks */
+.content-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    align-items: center;
+    margin: 5px 0 5px;
+}
+
+/* reverse layout */
+.content-block.reverse {
+    direction: rtl;
+}
+
+.content-block.reverse .text,
+.content-block.reverse .image {
+    direction: ltr;
+}
+
+/* image styling */
+.content-block img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* text styling */
+.text {
+    font-size: 1.05rem;
+}
+
+.full-text {
+    width: 100%;
+    margin: 30px 0;
+}
+
+#nav {
+    position: sticky;
+    top: 20px; /* distance from top when it sticks */
+}
+
+#subnav {
+    position: sticky;
+    top: 240px; /* adjust based on nav height */
+}

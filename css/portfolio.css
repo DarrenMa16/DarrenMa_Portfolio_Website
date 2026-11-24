@@ -1,0 +1,590 @@
+/* Boska Font */
+
+/* Regular */
+@font-face {
+  font-family: 'Boska';
+  src: url('/fonts/Boska-Regular.woff2') format('woff2'),
+       url('/fonts/Boska-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Light */
+@font-face {
+  font-family: 'Boska';
+  src: url('/fonts/Boska-Light.woff2') format('woff2'),
+       url('/fonts/Boska-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Medium */
+@font-face {
+  font-family: 'Boska';
+  src: url('/fonts/Boska-Medium.woff2') format('woff2'),
+       url('/fonts/Boska-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Bold */
+@font-face {
+  font-family: 'Boska';
+  src: url('/fonts/Boska-Bold.woff2') format('woff2'),
+       url('/fonts/Boska-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Black */
+@font-face {
+  font-family: 'Boska';
+  src: url('/fonts/Boska-Black.woff2') format('woff2'),
+       url('/fonts/Boska-Black.woff') format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* General */
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* Mobile Settings */
+body {
+    margin: 0;
+    font-family: "GhibliFont", Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    background-color: #f7f9fb;
+    color: #222;
+
+    display: grid;
+    grid-template-columns: 1fr; /* Change to only one column */
+    grid-template-areas:
+        "header"
+        "nav"
+        "hero"
+        "main"
+        "footer";
+}
+
+/* Typography */
+body {
+  font-family: 'Boska', sans-serif;
+  font-weight: 400;
+}
+
+h1 {
+  font-weight: 900; /* Black */
+  text-align: center;
+}
+
+h2 {
+  font-weight: 700; /* Bold */
+}
+
+h3 {
+  font-weight: 500; /* Medium */
+}
+
+p {
+  font-weight: 400; /* Regular */
+}
+
+/* Header */
+header {
+    grid-area: header;
+    background-color: #ffffff;
+    border-bottom: 2px solid #ddd;
+    padding: 10px 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+}
+
+nav {
+    grid-area: nav;
+    /*background-color: #eaf2f8;*/
+    padding: 15px;
+}
+
+nav ul li {
+    transition: 0.2s ease;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav ul li a {
+    display: block;
+    padding: 5px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #095d94;
+    font-weight: bold;
+}
+
+nav a.active {
+  font-weight: 900; /* bold */
+}
+
+/* Main */
+main {
+    grid-area: main;
+    padding: 10px;
+}
+
+/* Sections */
+section {
+    margin-bottom: 0.5em;
+}
+
+/* Images (FIXED) */
+img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin: 5px 0 10px;
+}
+
+/* Photo Grid */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 0px;
+}
+
+.photo-card {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px;
+    color: white;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+}
+
+/* Masonry Grid */
+.container {
+    column-count: 1;
+    column-gap: 20px;
+    padding: 0px;
+
+    text-align: center;
+}
+
+/* Images inside masonry */
+.container img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 15px;
+    margin-bottom: 12px;
+
+    break-inside: avoid;
+}
+
+/* Back To Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Light Box */
+#lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.9);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+
+    z-index: 999;
+ }
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain; /* ensures full image is visible */
+    border-radius: 10px;
+}
+
+#lightbox.show {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+/* close button */
+#closeBtn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Contact Section */
+.contact {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+/* Form layout */
+.contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Labels */
+.contact label {
+    font-weight: 500;
+}
+
+/* Inputs + textarea */
+.contact input,
+.contact textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: 'Boska', sans-serif;
+    font-size: 1rem;
+}
+
+/* Focus state (important for accessibility) */
+.contact input:focus,
+.contact textarea:focus {
+    outline: none;
+    border-color: #095d94;
+    box-shadow: 0 0 0 2px rgba(9, 93, 148, 0.2);
+}
+
+/* Textarea resize control */
+.contact textarea {
+    resize: vertical;
+}
+
+/* Submit button */
+#submit {
+    background-color: #095d94;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+/* Hover effect */
+#submit:hover {
+    background-color: #0a6fb3;
+}
+
+/* Center button */
+#submit {
+    width: fit-content;
+    align-self: center;
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 60px;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 500px;
+    color: #797474;
+}
+
+.hero ul li {
+    font-size: 1.0rem;
+    max-width: 500px;
+    color: #797474;
+}
+
+.hero-right {
+    display: flex;
+    justify-content: center;
+    order: -1;
+}
+
+.hero-right img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.hero-left,
+.hero-right {
+    flex: 1;
+}
+
+.hero-image {
+    grid-column: 1 / -1; /* spans ALL columns */
+    position: relative;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 80vh;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0; /* top:0 right:0 bottom:0 left:0 */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    color: white;
+    z-index: 2;
+}
+
+
+/* Social Media Icons */
+.icon {
+    width: 30px;
+    height: 30px;
+    fill: #525252;
+    transition: 0.2s ease;
+}
+
+.socials a:hover .icon {
+    fill: #aaa;
+}
+
+.socials ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.icon.youtube {
+  transform: scale(1.2);
+}
+
+/* Contact Information */
+.contact-info {
+    margin-top: 40px;
+}
+
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-list div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact-list dt {
+    font-weight: bold;
+}
+
+.contact-list dd {
+    margin: 0;
+    color: #555;
+}
+
+/* Tablet Settings */
+@media (min-width: 600px) {
+    .container {
+        column-count: 2;
+    }
+    .hero {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .contact-list div {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* keyboard focus visibility */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #095d94;
+    outline-offset: 3px;
+    border-radius: 6px;
+}
+
+/* DARK MODE */
+.dark-mode {
+    background-color: #121212;
+    color: #eee;
+}
+
+.dark-mode header,
+.dark-mode footer {
+    background-color: #1e1e1e;
+    border-color: #333;
+}
+
+.dark-mode #nav {
+    background-color: #1a2633;
+}
+
+.dark-mode #subnav {
+    background-color: #1a1f24;
+}
+
+.dark-mode a {
+    color: #6cb6ff;
+}
+
+/* Fix headings in dark mode */
+.dark-mode h2 {
+    color: #6cb6ff;
+}
+
+.dark-mode h3 {
+    color: #9ecfff;
+}
+
+/* Day box styling in dark mode */
+.dark-mode #dayBox {
+    background-color: #2a2a2a;
+    color: #fff;
+}
+
+/* Align this box to the right of the screen */
+#dayBox {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: #eaf2f8;
+    border-radius: 10px;
+    font-size: 1.2rem;
+
+    width: fit-content;
+    margin-left: auto;   /* pushes it to the right */
+}
+
+
+/* Tablet Settings */
+@media (min-width: 768px) {
+    body {
+        grid-template-columns: 200px 1fr;
+        grid-template-areas:
+        "header header"
+        "hero hero"
+        "main main"
+        "footer footer";
+    }
+
+    main {
+        padding: 10px;
+    }
+
+    .content-block {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    nav {
+        position: sticky;
+        top: 0px;
+        height: fit-content;
+    }
+}
+
+/* Desktop Settings */
+@media (min-width: 1024px) {
+    body {
+        grid-template-columns: 220px 1fr 180px;
+        grid-template-areas:
+        "header header header"
+        "hero hero hero"
+        "main main main"
+        "footer footer footer";
+    }
+
+    .container {
+        column-count: 3;
+    }
+}

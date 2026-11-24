@@ -1,0 +1,99 @@
+/* General Style */
+body {
+	margin: 30px; 
+	font-family: Helvetica, sans-serif; 
+	font-size: 16px;
+}
+
+
+body#raster-page {
+	background-image: url("https://nyu.tobi1.com/hm3298/media/background.jpg");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+	margin: 0;
+}
+
+h1, h2, h3 {
+    font-family: Helvetica, sans-serif;
+}
+
+/* Navigation */
+nav ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    justify-content: left;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0;
+}
+
+/* Links */
+a:link {
+	color: #003366;
+}
+a:visited {
+	color: #5a2a83;
+}
+a:hover {
+	color: #ff6600;
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+a:focus {
+    outline: 2px solid black;
+}
+
+/* photo gallery */
+.image_row {
+    display: flex;
+    gap: 20px;
+    justify-content: left;
+}
+
+.image_row img {
+    width: 32%;
+    height: auto;
+}
+
+/* section box */
+section {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+.section-box {
+    padding: 20px;
+    border: 1px solid #ccc;
+}
+
+/* id selector */
+#welcome {
+    background-color: #ddeeff;
+}
+
+/* image settings */
+img {
+    max-width: 100%;
+    max-height: 900px;
+    height: auto;
+}
+
+/* SVG */
+svg {
+  width: 150px;
+  height: auto;
+}
+
+svg .cls-1 {
+  fill: #ADD8E6;
+}
+
+a:hover svg .cls-1 {
+  fill: #2E86C1;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset = "UTF-8">
+		<meta name="viewport" contents="width=device-width">
+		<title>My Website Home Page</title>
+		<style>
+			body {background-color: #6495ED}
+			
+			h1 {
+				color: white;
+				margin: 30px;
+				font-family: Helvetica, sans-serif;
+			}
+			
+			h2 {
+				color: white;
+				font-family: Roboto, sans-serif
+			}
+			p {
+				color: white;
+				margin: 30px;
+				font-family: Arial, sans-serif;
+			}
+			
+			form {
+				display: grid;
+				gap:1rem;
+			}
+			input {
+				margin-bottom:1rem;
+			}
+			@media (min-width:768px) {
+				form {
+					grid-template-columns: auto auto;
+				}
+				#submit {
+					grid-column-start: 1;
+					grid-column-end: 3;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h1>Introduction to Web Design</h1>
+			<a href="./index.html">
+  				<svg 
+    				id="Layer_1" 
+    				data-name="Layer 1" 
+    				xmlns="http://www.w3.org/2000/svg" 
+    				viewBox="0 0 338.34 317.59"
+    				style="width:150px; height:auto; margin:30px;">
+    				
+    				<title>Darren Ma web design project</title>
+    				
+    				<defs>
+      					<style>
+        					.cls-1 {
+          						fill: #ADD8E6;
+          						transition: fill 0.3s ease;
+        					}
+
+        					a:hover .cls-1 {
+          						fill: #2E86C1;
+        					}
+      					</style>
+   					</defs>
+
+    				<path class="cls-1" d="M109.27,123.81c-5.19-4.89-12.5-7.34-21.93-7.34h-23.12v93.69h23.12c9.43,0,16.74-2.45,21.93-7.34,5.19-4.89,7.78-11.79,7.78-20.7v-37.62c0-8.91-2.59-15.81-7.78-20.7Z"/>
+    				<path class="cls-1" d="M158.8,0C71.1,0,0,71.1,0,158.8s71.1,158.8,158.8,158.8,158.8-71.1,158.8-158.8S246.5,0,158.8,0ZM135.42,181.42c0,9.67-1.9,17.93-5.71,24.79-3.81,6.86-9.36,12.07-16.66,15.64-7.29,3.58-16.07,5.36-26.32,5.36h-40.43v-127.79h40.52c10.25,0,19.01,1.79,26.28,5.36,7.26,3.57,12.8,8.79,16.61,15.64,3.81,6.86,5.71,15.12,5.71,24.79v36.21ZM253.81,227.21v-88.07l-30.59,70.31h-12.48l-30.59-68.6v86.36h-17.49v-127.79h16.79l37.53,84.38,37.53-84.38h16.79v127.79h-17.49Z"/>
+  				</svg>
+			</a>
+			<nav style="margin: 30px">
+				<h2> The Course Assignments</h2>
+				<ul style="background-color: white; border-radius: 8px; padding: 25px; font-family: Georgia, serif;">
+					<li> <a href = "site_a2/index.html">HTML </a> </li>
+					<li> <a href = "site/index.html">CSS </a> </li>
+					<li> <a href = "raster/index.html">Raster Graphics</a></li>
+					<li>Vector Graphics</li>
+					<li> <a href = "page_layout/index.html">Page Layout</a></li>
+					<li> <a href = "responsive/index.html">Responsive</a></li>
+					<li> <a href = "javascript/index.html">Javascript</a></li>
+					<li> <a href = "media-portfolio/index.html">Media Portfolio</a></li>
+				</ul>
+			</nav>
+		</header>
+		<p>Hi, my name is Darren. I am a Sophmore at NYU studying Game Design and CS at Tisch and CAS.</p>
+		
+		<h2>Contact Me</h2>
+		<form method="post" action="https://nyu.tobi1.com/form-response.php">
+			<label for="name">Name</label>
+			<input type="text" id="name" name="name" value="">
+			
+			
+			<label for="email">Email</label>
+			<input type="text" id="email" name="email" value="">
+			
+			<label for="message">Message</label>
+			<textarea id="message" name="message" rows="4" cols="50"> I like this site because: </textarea>
+			
+			<input type="submit" name="submit" id="submit" value="Submit Form">
+		</form>
+
+		<script src="../js/class.js"></script>
+		
+	</body>
+</html>

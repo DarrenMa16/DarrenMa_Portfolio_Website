@@ -1,0 +1,191 @@
+/* =========================================
+   1. FONT IMPORTS
+   ========================================= */
+
+
+@font-face {
+    font-family:"London_Extravagant";
+    src: url('/fonts/London-DropShadow.ttf') format('tff'),
+    	 url('/fonts/London-Fill') format('tff'),
+    	 url('/fonts/London-NoFill') format('tff');
+    font-style: normal;
+    font-weight: normal;
+    font-display: swap;
+}
+
+/* =========================================
+   2. CSS VARIABLES (Union Jack Theme & Systems)
+   ========================================= */
+:root {
+    /* Brand Colors */
+    --theme-accent: #C8102E; 
+    --theme-dark: #012169;   
+    
+    /* Background Surfaces */
+    --bg-light: #f4f4f4;     /* Main nav background */
+    --bg-white: #ffffff;     /* Cards, buttons */
+    --bg-offwhite: #fafafa;  /* Intro box */
+    --bg-hover: #e9e9e9;     /* Button hover states */
+    
+    /* Typography */
+    --text-main: #333333;       
+    --text-muted: #666666;   /* Figcaptions */
+    --text-inverse: #ffffff; /* Footer text, active buttons */
+    
+    /* Borders & Structure */
+    --border-medium: #cccccc; /* Nav borders */
+    --border-light: #eeeeee;  /* Dividers and light card borders */
+    --border-radius: 8px;
+    
+    /* Elevation (Shadows) */
+    --shadow-sm: 0 2px 5px rgba(0,0,0,0.05); /* Subtle depth for cards */
+    --shadow-md: 0 4px 8px rgba(0,0,0,0.1);  /* Standard image depth */
+    --shadow-lg: 0 10px 20px rgba(0,0,0,0.15); /* Hover state lift */
+}
+
+/* =========================================
+   3. GLOBAL RESET & BASE TYPOGRAPHY
+   ========================================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family:"London_Extravagent";
+    color: var(--text-main);
+    liine-height: 1.6;
+    margin: 0;
+    letter-spacing: 0.05rem;
+    
+    /* outer grid */
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    
+    min-height: 100vh;
+    
+}
+
+h1, h2, h3 {
+    
+}
+
+img {
+    
+}
+
+/* =========================================
+   4. GLOBAL LAYOUT ELEMENTS
+   ========================================= */
+header {
+    
+}
+
+header h1 {
+    
+}
+
+.logo {
+    
+}
+
+/* Pure Document Flow Navigation */
+nav {
+    
+}
+
+nav a {
+    
+}
+
+nav a:last-child {
+    
+}
+
+nav a:hover {
+    
+}
+
+main {
+    
+}
+
+.intro {
+    
+}
+
+footer {
+    
+}
+
+/* =========================================
+   5. GLOBAL ANIMATIONS & HOVERS
+   ========================================= */
+.food-card, 
+.attraction-card figure img, 
+.image-gallery img {
+    
+}
+
+.food-card:hover {
+    
+}
+
+.attraction-card figure img:hover,
+.image-gallery img:hover {
+    
+}
+
+/* =========================================
+   PAGE 1: MY LONDON (#london-page)
+   ========================================= */
+#london-page .attraction-card {
+   
+}
+
+#london-page .attraction-card figure {
+    
+}
+
+#london-page .attraction-card img {
+    
+}
+
+#london-page figcaption {
+    
+}
+
+/* =========================================
+   PAGE 2: BRITISH FOOD (#food-page)
+   ========================================= */
+#food-page .food-grid {
+	display: grid;
+	grid-template-columns: ;
+	gap: 2em;
+}
+
+#food-page .food-card {
+    
+}
+
+#food-page .food-card img {
+    
+}
+
+/* =========================================
+   PAGE 3: OUTSIDE THE M25 (#m25-page)
+   ========================================= */
+#m25-page .destination-card {
+   
+}
+
+#m25-page .image-gallery {
+    
+}
+
+#m25-page .image-gallery img {
+    
+}
+
+#m25-page .image-gallery figcaption {
+    
+}
